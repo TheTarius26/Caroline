@@ -2,6 +2,7 @@
 	"name": "caroline",
 	"private": false,
 	"version": "0.0.1",
+	"packageManager": "pnpm@10.10.0",
 	"type": "module",
 	"scripts": {
 		"dev": "vite dev",
