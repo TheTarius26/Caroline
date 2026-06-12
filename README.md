@@ -183,3 +183,7 @@ Links a GitHub repository to a project idea, showing who built what.
 | `pnpm db:migrate` | Run migrations |
 | `pnpm db:studio` | Open Drizzle Studio |
 | `pnpm db:seed` | Seed database with sample data |
+
+## License
+
+[MIT](LICENSE) — feel free to use, modify, and distribute.
