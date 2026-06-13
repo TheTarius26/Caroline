@@ -5,6 +5,13 @@ yarn.lock
 bun.lock
 bun.lockb
 
-# Miscellaneous
+# Build & Generated
 /static/
 /drizzle/
+/.svelte-kit/
+/build/
+/src/lib/paraglide/
+/src/paraglide/
+/project.inlang/cache/
+
+# Miscellaneous
