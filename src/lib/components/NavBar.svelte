@@ -54,9 +54,9 @@
 		</div>
 
 		<nav class="flex flex-col space-y-2">
-			<a href="/" class="text-gray-700 hover:text-gray-900">Home</a>
+			<!-- <a href="/" class="text-gray-700 hover:text-gray-900">Home</a>
 			<a href="/about" class="text-gray-700 hover:text-gray-900">About</a>
-			<a href="/contact" class="text-gray-700 hover:text-gray-900">Contact</a>
+			<a href="/contact" class="text-gray-700 hover:text-gray-900">Contact</a> -->
 		</nav>
 	</aside>
 {/if}

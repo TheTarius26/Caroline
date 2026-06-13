@@ -10,6 +10,7 @@
 		downvotes?: number;
 		href?: string;
 		onclick?: () => void;
+		name?: string;
 	}
 
 	let {
@@ -20,7 +21,8 @@
 		upvotes,
 		downvotes,
 		onclick,
-		href
+		href,
+		name
 	}: ProjectItemProps = $props();
 </script>
 
@@ -31,6 +33,7 @@
 	type={href ? undefined : 'button'}
 	role={href ? 'link' : 'button'}
 	class="border border-gray-300 rounded-md p-4 h-full flex flex-col justify-start shadow-sm hover:shadow-md transition-shadow cursor-pointer"
+	{name}
 >
 	<div class="flex items-center justify-between gap-2 mb-2">
 		<h3 class="text-lg font-semibold">{title}</h3>

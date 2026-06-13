@@ -4,9 +4,10 @@
 		onclick?: () => void;
 		selected?: boolean;
 		formaction?: string;
+		name?: string;
 	}
 
-	let { label, onclick, selected, formaction }: CategoryBadgeProps = $props();
+	let { label, onclick, selected, formaction, name }: CategoryBadgeProps = $props();
 </script>
 
 <button
@@ -15,6 +16,7 @@
 		: ''} {selected ? 'bg-blue-500 text-white hover:bg-blue-800' : 'bg-gray-200 hover:bg-gray-300'}"
 	{formaction}
 	{onclick}
+	{name}
 >
 	<span class="capitalize">{label}</span>
 </button>
