@@ -23,9 +23,17 @@ export default defineConfig(
 	},
 	js.configs.recommended,
 	ts.configs.recommended,
-	svelte.configs.recommended,
+	svelte.configs['flat/recommended'],
+	{
+		files: ['**/*.svelte'],
+		languageOptions: {
+			parserOptions: {
+				parser: ts.parser
+			}
+		}
+	},
 	prettier,
-	svelte.configs.prettier,
+	svelte.configs['flat/prettier'],
 	{
 		languageOptions: { globals: { ...globals.browser, ...globals.node } },
 		rules: {
@@ -35,9 +43,7 @@ export default defineConfig(
 	{
 		files: ['**/*.ts'],
 		ignores: ['.config/**'],
-		rules: {
-			/* ... */
-		}
+		rules: {}
 	},
 	{
 		rules: {}
