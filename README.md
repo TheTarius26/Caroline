@@ -2,14 +2,18 @@
 
 AI-powered project idea generator with community features. Get fresh project ideas, validate them with the community, showcase your implementations, and collaborate with others.
 
+[![CI](https://github.com/TheTarius26/Caroline/actions/workflows/ci.yml/badge.svg)](https://github.com/TheTarius26/Caroline/actions/workflows/ci.yml) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 ## Features
 
 ### AI Idea Generation
+
 - Generate project ideas daily/weekly via OpenRouter AI (deepseek-v4-flash)
 - Ideas saved to PostgreSQL and displayed with category filtering & search
 - AI avoids duplicate ideas by cross-referencing existing projects in the database
 
 ### Community Features
+
 - **Browse & Filter** — Search ideas by keyword or filter by category
 - **Vote** — Upvote/downvote ideas (Reddit-style validation)
 - **Discuss** — Nested comments/replies per idea for community feedback
@@ -18,27 +22,30 @@ AI-powered project idea generator with community features. Get fresh project ide
 - **User Profiles** — Track your contributions, ideas, and showcased projects
 
 ### Authentication
+
 - Email/password login
 - GitHub OAuth
 - Session management via Better Auth
 
 ### Tech Stack
-| Layer | Technology |
-|---|---|
-| Framework | SvelteKit 5 (Runes mode) |
-| Language | TypeScript 6 |
-| Styling | Tailwind CSS v4 |
-| Database | PostgreSQL |
-| ORM | Drizzle ORM |
-| Auth | Better Auth |
-| AI | OpenRouter Agent (deepseek-v4-flash) |
-| i18n | Paraglide (en, id) |
-| Testing | Vitest + Playwright |
-| Package Manager | pnpm |
+
+| Layer           | Technology                           |
+| --------------- | ------------------------------------ |
+| Framework       | SvelteKit 5 (Runes mode)             |
+| Language        | TypeScript 6                         |
+| Styling         | Tailwind CSS v4                      |
+| Database        | PostgreSQL                           |
+| ORM             | Drizzle ORM                          |
+| Auth            | Better Auth                          |
+| AI              | OpenRouter Agent (deepseek-v4-flash) |
+| i18n            | Paraglide (en, id)                   |
+| Testing         | Vitest + Playwright                  |
+| Package Manager | pnpm                                 |
 
 ## Getting Started
 
 ### Prerequisites
+
 - Node.js 22+
 - pnpm
 - PostgreSQL database
@@ -94,6 +101,7 @@ pnpm db:seed
 ```
 
 Populates the database with:
+
 - 5 sample users
 - 12 AI-generated project ideas
 - Comments, replies, votes, and ratings
@@ -147,42 +155,46 @@ src/
 ## Database Schema
 
 ### `projects`
-| Column | Type | Description |
-|---|---|---|
-| id | text (PK) | UUID |
-| name | text | Idea title |
-| description | text | Detailed description |
-| features | text | Comma-separated features |
-| category | text | AI, Health, Education, etc. |
-| difficulty | integer | 1 (beginner) - 3 (advanced) |
-| status | text | active, in_progress, showcased, completed |
-| upvotes / downvotes | integer | Vote counters |
-| views | integer | Page view counter |
+
+| Column              | Type      | Description                               |
+| ------------------- | --------- | ----------------------------------------- |
+| id                  | text (PK) | UUID                                      |
+| name                | text      | Idea title                                |
+| description         | text      | Detailed description                      |
+| features            | text      | Comma-separated features                  |
+| category            | text      | AI, Health, Education, etc.               |
+| difficulty          | integer   | 1 (beginner) - 3 (advanced)               |
+| status              | text      | active, in_progress, showcased, completed |
+| upvotes / downvotes | integer   | Vote counters                             |
+| views               | integer   | Page view counter                         |
 
 ### `comments`
+
 Nested replies via `parentId` self-referencing FK. Supports threaded discussions per project.
 
 ### `ratings`
+
 1–5 star ratings per user per project, with optional review comment.
 
 ### `collaborators`
+
 Links a GitHub repository to a project idea, showing who built what.
 
 ## Scripts
 
-| Command | Description |
-|---|---|
-| `pnpm dev` | Start dev server |
-| `pnpm build` | Production build |
-| `pnpm preview` | Preview production build |
-| `pnpm check` | Type-check with svelte-check |
-| `pnpm lint` | Lint with ESLint + Prettier |
-| `pnpm test` | Run unit tests |
-| `pnpm db:push` | Push schema to database |
-| `pnpm db:generate` | Generate migration |
-| `pnpm db:migrate` | Run migrations |
-| `pnpm db:studio` | Open Drizzle Studio |
-| `pnpm db:seed` | Seed database with sample data |
+| Command            | Description                    |
+| ------------------ | ------------------------------ |
+| `pnpm dev`         | Start dev server               |
+| `pnpm build`       | Production build               |
+| `pnpm preview`     | Preview production build       |
+| `pnpm check`       | Type-check with svelte-check   |
+| `pnpm lint`        | Lint with ESLint + Prettier    |
+| `pnpm test`        | Run unit tests                 |
+| `pnpm db:push`     | Push schema to database        |
+| `pnpm db:generate` | Generate migration             |
+| `pnpm db:migrate`  | Run migrations                 |
+| `pnpm db:studio`   | Open Drizzle Studio            |
+| `pnpm db:seed`     | Seed database with sample data |
 
 ## License
 
