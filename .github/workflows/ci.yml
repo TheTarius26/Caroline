@@ -2,9 +2,9 @@ name: CI
 
 on:
   push:
-    branches: [master]
+    branches: [main]
   pull_request:
-    branches: [master]
+    branches: [main]
 
 jobs:
   check:
@@ -18,5 +18,6 @@ jobs:
           cache: pnpm
 
       - run: pnpm install --frozen-lockfile
+      - run: npx @inlang/paraglide-js compile --project ./project.inlang --outdir ./src/lib/paraglide
       - run: pnpm check
       - run: pnpm lint
